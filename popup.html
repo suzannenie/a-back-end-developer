@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Popup</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Nunito'
+          rel='stylesheet'>
+    <link rel="stylesheet" href="/styles/popup.css">
+</head>
+<body>
+<h4>What do you call a software engineer doing squats?</h4>
+
+<p id="quip"></p>
+<div id="timer">
+    <p id="small">hours : minutes : seconds</p>
+    <div>
+        <input id="hours" type="number" class="timer_part" maxlength="2"
+               min="00" max="23" value="0">
+        <span>:</span>
+        <input id="minutes" type="number" class="timer_part" maxlength="2"
+               min="00" max="59" value="0">
+        <span>:</span>
+        <input id="seconds" type="number" class="timer_part" maxlength="2"
+               min="00" max="59" value="0">
+    </div>
+    <ul>
+        <li><a href="#" class="button" id="timer_start">Start</a></li>
+        <li><a href="#" class="button disabled" id="timer_stop">Cancel</a></li>
+    </ul>
+</div>
+<p id="bottom">A back-end developer</p>
+
+<script src="js/popup.js"></script>
+</body>
+</html>

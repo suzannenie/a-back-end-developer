@@ -1,0 +1,55 @@
+body {
+      background-color: SkyBlue;
+      font-family: 'Nunito';
+      font-size: 16px;
+      text-align: center;
+      width: 300px;
+      height: 300px;
+}
+
+ul {
+	margin: 5 0;
+	padding: 0;
+}
+
+ul li {
+	display: inline;
+	list-style-type: none;
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: 1px solid white;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.button.disabled {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+	pointer-events: none;
+   	cursor: default;
+}
+
+input {
+    font-size: 1.5em;
+}
+
+#small {
+    margin: 0;
+    font-size: .75em;
+}
+
+#bottom {
+  position: absolute;
+  margin: auto;
+  width: 50%;
+  bottom: 10px;
+  text-align: center;
+  border: 1px solid #999999;
+}
