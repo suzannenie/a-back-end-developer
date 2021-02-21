@@ -9,7 +9,7 @@ const checkpointURL = modelURL + "model.json";
 // the metatadata json file contains the text labels of your model and additional information
 const metadataURL = modelURL + "metadata.json";
 
-const size = 300;
+const size = 500;
 const flip = true; // whether to flip the webcam
 let webcam;
 let model;
@@ -21,6 +21,7 @@ let numsquats = localStorage.getItem('numsquats');
 let squatsleft = numsquats;
 let oldClass = 0;
 let squatTime = 0;
+let poseNet;
 
 // A function that loads the model from the checkpoint
 async function load() {
@@ -43,8 +44,8 @@ async function loadWebcam() {
 
 async function setup() {
   myCanvas = createCanvas(size, size);
+  myCanvas.parent("canvas");
   ctx = myCanvas.elt.getContext("2d");
-
   // Call the load function, wait until it finishes loading
   await load();
   await loadWebcam();

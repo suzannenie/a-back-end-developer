@@ -1,6 +1,9 @@
 html,
 body {
   height: 100%;
+  text-align: center;
+  font-family: 'Nunito';
+  background-color: SkyBlue;
 }
 
 #vidContainer {
@@ -8,4 +11,62 @@ body {
   border: 1px solid red;
   top: 70px;
   right: 15px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 90vw;
+    height: 90vh;
+    justify-content: space-around;
+    align-items: center;
+
+    /* position: relative; */
+}
+
+.left {
+    display: flex;
+
+    overflow: hidden;
+    width: 80%;
+    height: 90%;
+
+    max-height: 761px;
+    min-width: 600px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.right {
+
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+    height: 90%;
+    width: 30%;
+    min-width: 300px;
+
+    align-items: center;
+
+}
+
+.counter {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 10px 10px 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 95%;
+    border: 2px solid black;
+    border-radius: 10px;
+    flex-grow: 1;
+}
+
+#squats-left {
+    font-size: 15vw;
+    font-family: sans-serif;
+    color: var(--black);
 }
