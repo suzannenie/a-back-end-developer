@@ -19,7 +19,19 @@ function initTime() {
     var ph = parseInt(localStorage.getItem('savehrs'), 10)
     var pm = parseInt(localStorage.getItem('savemin'), 10)
     var ps = parseInt(localStorage.getItem('savesec'), 10)
-    console.log(h, m, s, ph, pm, ps)
+    var n = parseInt(localStorage.getItem('numsquats'), 10) || 5
+    var pn = parseInt(localStorage.getItem('savenum'), 10)
+
+    if (n == 5) {
+        if (isNaN(pn)) {
+            num.value = "5";
+        } else {
+            num.value = pn;
+        }
+    }
+    else {
+        num.value = n;
+    }
 
     getVal (hours, h, h, m, s, ph)
     getVal (minutes, m, h, m, s, pm)
@@ -73,6 +85,7 @@ function onMessage(message) {
         hours.value = parseInt(localStorage.getItem('savehrs'),10)
         minutes.value = parseInt(localStorage.getItem('savemin'),10)
         seconds.value = parseInt(localStorage.getItem('savesec'),10)
+        num.value = parseInt(localStorage.getItem('savenum'),10)
         start.className = "button"
         cancel.className = "button disabled"
     }
@@ -92,6 +105,7 @@ function onStart(event) {
     localStorage.setItem('savesec', s)
     localStorage.setItem('cancel', true)
     localStorage.setItem('numsquats', n)
+    localStorage.setItem('savenum', n)
     cancel.className = "button"
     start.className = "button disabled"
     quip.innerHTML = ""
@@ -107,6 +121,7 @@ function onCancel(event) {
     var h = parseInt(localStorage.getItem('savehrs'), 10)
     var m = parseInt(localStorage.getItem('savemin'), 10)
     var s = parseInt(localStorage.getItem('savesec'), 10)
+    num.value = parseInt(localStorage.getItem('savenum'), 10)
     hours.value = h > 9 ? h : "0"+h
     minutes.value = m > 9 ? m : "0"+m
     seconds.value = s > 9 ? s : "0"+s

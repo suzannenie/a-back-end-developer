@@ -66,8 +66,7 @@ async function predict() {
     const prediction = await model.predict(posenetOutput);
 
     for (let i = 0; i < totalClasses; i++) {
-        const classPrediction =
-            prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+        const classPrediction = prediction[i].probability.toFixed(2);
         labelContainer.childNodes[i].innerHTML = classPrediction;
 
         if (prediction[i].probability.toFixed(2) >= 0.5) {

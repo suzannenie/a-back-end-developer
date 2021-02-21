@@ -6,13 +6,6 @@ body {
   background-color: SkyBlue;
 }
 
-#vidContainer {
-  position: absolute;
-  border: 1px solid red;
-  top: 70px;
-  right: 15px;
-}
-
 .container {
     display: flex;
     flex-direction: row;
@@ -20,8 +13,6 @@ body {
     height: 90vh;
     justify-content: space-around;
     align-items: center;
-
-    /* position: relative; */
 }
 
 .left {
@@ -39,7 +30,6 @@ body {
 }
 
 .right {
-
     display: flex;
 
     flex-direction: column;
@@ -49,7 +39,6 @@ body {
     min-width: 300px;
 
     align-items: center;
-
 }
 
 .counter {
