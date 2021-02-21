@@ -1,8 +1,5 @@
 // More API functions here:
 // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/pose
-
-// the link to your model provided by Teachable Machine export panel
-const URL = 'https://teachablemachine.withgoogle.com/models/dy0IoYYnm/';
 const modelURL = 'https://teachablemachine.withgoogle.com/models/dy0IoYYnm/';
 // the json file (model topology) has a reference to the bin file (model weights)
 const checkpointURL = modelURL + "model.json";
@@ -110,7 +107,7 @@ function drawPose(pose) {
 
 
 function celebrate () {
-    party.element(document.getElementById("party"), {
+    party.element(document.getElementById("done"), {
       count: 40,
       countVariation: 0.5,
       angleSpan: 80,
@@ -119,4 +116,6 @@ function celebrate () {
       rotationVelocityLimit: 6,
       scaleVariation: 0.8
     });
+    document.getElementById('done').style = ""
+    document.getElementById('party').style.display = "none"
 }
