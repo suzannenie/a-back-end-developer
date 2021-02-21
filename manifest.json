@@ -5,12 +5,12 @@
   "manifest_version": 2,
   "browser_action": {
     "default_popup": "popup.html",
-    "default_icon": "dogsquat.png"
+    "default_icon": "styles/dogsquat.png"
   },
   "icons": {
-    "16": "dogsquat.png",
-    "48": "dogsquat.png",
-    "128": "dogsquat.png"
+    "16": "styles/dogsquat.png",
+    "48": "styles/dogsquat.png",
+    "128": "styles/dogsquat.png"
   },
   "permissions": [
       "tabs",
@@ -33,5 +33,11 @@
           "background.js"
         ],
         "persistent": false
-    }
+    },
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+    "web_accessible_resources": [
+      "js/home.js",
+      "js/p5.min.js",
+      "js/p5.dom.min.js"
+    ]
 }

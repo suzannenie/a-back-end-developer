@@ -2,6 +2,7 @@
 var hours = document.getElementById('hours')
 var minutes = document.getElementById('minutes')
 var seconds = document.getElementById('seconds')
+var num = document.getElementById('numsquats')
 
 // buttons
 var start = document.getElementById('timer_start')
@@ -89,6 +90,7 @@ function onStart(event) {
     localStorage.setItem('savemin', m)
     localStorage.setItem('savesec', s)
     localStorage.setItem('cancel', true)
+    localStorage.setItem('numsquats', num)
     cancel.className = "button"
     start.className = "button disabled"
     quip.innerHTML = "check your POSTURE"
@@ -148,10 +150,16 @@ function onTimeChange (value, hour, minute, second) {
     }
 }
 
+function numChange (value) {
+    num = value;
+    localStorage.setItem('numsquats', num);
+}
+
 
 hours.addEventListener('keyup', event => onTimeChange(event.target.value, true, false, false))
 minutes.addEventListener('keyup', event => onTimeChange(event.target.value, false, true, false))
 seconds.addEventListener('keyup', event => onTimeChange(event.target.value, false, false, true))
+num.addEventListener('keyup', event => numChange(event.target.value))
 
 start.addEventListener('click', onStart)
 cancel.addEventListener('click', onCancel)
