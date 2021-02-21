@@ -58,6 +58,9 @@ async function loopWebcam(timestamp) {
 }
 
 async function predict() {
+    if (squatsleft == 0) {
+        celebrate();
+    }
     // Prediction #1: run input through posenet
     // estimatePose can take in an image, video or canvas html element
     const { pose, posenetOutput } = await model.estimatePose(webcam.canvas);
@@ -78,6 +81,7 @@ async function predict() {
                 squatsleft = (squatsleft >= 0 ? squatsleft - 1 : 0);
                 console.log(squatTime, squatsleft);
                 squatTime = 0
+
             }
             if (i != 1) {
                 squatTime = 0;
@@ -103,3 +107,15 @@ function drawPose(pose) {
   }
 }
 
+
+function celebrate () {
+    party.element(document.getElementById("party"), {
+      count: 40,
+      countVariation: 0.5,
+      angleSpan: 80,
+      yVelocity: -300,
+      yVelocityVariation: 1,
+      rotationVelocityLimit: 6,
+      scaleVariation: 0.8
+    });
+}

@@ -82,6 +82,7 @@ function onStart(event) {
     var h = parseInt(hours.value, 10)
     var m = parseInt(minutes.value, 10)
     var s = parseInt(seconds.value, 10)
+    var n = parseInt(num.value, 10)
 
     localStorage.setItem('hrs', h)
     localStorage.setItem('min', m)
@@ -90,10 +91,10 @@ function onStart(event) {
     localStorage.setItem('savemin', m)
     localStorage.setItem('savesec', s)
     localStorage.setItem('cancel', true)
-    localStorage.setItem('numsquats', num)
+    localStorage.setItem('numsquats', n)
     cancel.className = "button"
     start.className = "button disabled"
-    quip.innerHTML = "check your POSTURE"
+    quip.innerHTML = ""
 
     chrome.runtime.sendMessage({hours:h, minutes: m, seconds:s})
 }
